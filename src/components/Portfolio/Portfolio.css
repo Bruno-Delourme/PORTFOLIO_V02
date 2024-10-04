@@ -7,17 +7,17 @@
     font-family: 'Arial', sans-serif;
   }
   
-  .header {
+  .portfolio-containerr {
     text-align: center;
     margin-bottom: 40px;
   }
   
-  .header h1 {
+  .portfolio-container h1 {
     font-size: 48px;
     font-weight: bold;
   }
   
-  .header p {
+  .portfolio-container p {
     font-size: 18px;
     color: #666;
   }
@@ -64,8 +64,8 @@
   }
   
   .thumb.active {
-    left: 80px;
-    background: #000;
+    left: 90px;
+    background: #000000;
   }
   
   .case-studies {

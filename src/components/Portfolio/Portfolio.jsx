@@ -11,12 +11,14 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       {/* Header section */}
-      <div className="header">
+      <div className="portfolio-container">
         <h1>portfolio.</h1>
         <p><h2>Check out some of my latest design case studies.</h2></p>
         <p><h3>
-          I’ve worked for startups, agencies, corporations, and government and
-          have led projects to design products used by millions of people.
+          I’ve worked for startups, agencies, corporations, government and nasa.
+          Just kidding. I&apos;m a junior Dev. What did you expect ? 
+          I&apos;have few projects, that I&apos;ve made on my own. And right now I&apos;ve just finished the famous exam of 42, &quot;La Piscine&quot;. 
+
           </h3></p>
       </div>
 
