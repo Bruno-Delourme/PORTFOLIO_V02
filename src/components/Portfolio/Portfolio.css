@@ -1,15 +1,24 @@
 /* Portfolio.css */
+@font-face {
+    font-family: 'D-DINE';
+    src: url('/assets/Fonts/D-DINE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 .portfolio {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
-    font-family: 'Arial', sans-serif;
+    
   }
   
-  .portfolio-containerr {
-    text-align: center;
+  .portfolio-container {
+    text-align:left;
     margin-bottom: 40px;
+    font-family: 'D-DINE', sans-serif;
+    
   }
   
   .portfolio-container h1 {
@@ -19,7 +28,7 @@
   
   .portfolio-container p {
     font-size: 18px;
-    color: #666;
+    color: #403f3f;
   }
   
   .pop-toggle {
@@ -117,4 +126,5 @@
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+  
   

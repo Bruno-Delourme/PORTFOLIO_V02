@@ -5,14 +5,16 @@ import designerImage from '../../assets/courbet.jpg';
 import coderImage from '../../assets/photo.jpg';  
 
 const Home = () => {
-    const [mouseX, setMouseX] = useState(50); // Position de la souris en pourcentage
+    const [mouseX, setMouseX] = useState(40); // Position de la souris initialisée à 40%
+    const [isHovering, setIsHovering] = useState(false); // Gérer si la souris est sur l'image
     const navigate = useNavigate();  // Initialisation de useNavigate pour gérer la navigation
   
     const handleMouseMove = (e) => {
+      if (!isHovering) return; // Si la souris n'est pas sur l'image, ne fais rien
       const { clientX } = e;
       const { left, width } = e.currentTarget.getBoundingClientRect();
       const newMouseX = ((clientX - left) / width) * 100; 
-      setMouseX(newMouseX);  // Calcul direct sans inversion ici
+      setMouseX(newMouseX); // Mettre à jour la position du séparateur seulement si on survole l'image
     };
 
     // Fonction pour rediriger vers la page "Designer"
@@ -28,7 +30,12 @@ const Home = () => {
     return (
       <>
         {/* Première section */}
-        <section className="home-section" onMouseMove={handleMouseMove}>
+        <section 
+          className="home-section" 
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)} // Activer quand la souris entre
+          onMouseLeave={() => setIsHovering(false)} // Désactiver quand la souris sort
+        >
           <div className="image-container">
             {/* Image Designer */}
             <div
@@ -36,7 +43,8 @@ const Home = () => {
               onClick={goToDesignerPage} // Événement de clic pour rediriger vers Designer
               style={{
                 clipPath: `inset(0 ${mouseX}% 0 0)`,
-                cursor: 'pointer' 
+                cursor: 'pointer',
+                transition: 'clip-path 1s ease', // Transition plus lente
               }}
             >
               <img src={designerImage} alt="Designer" />
@@ -48,14 +56,21 @@ const Home = () => {
               onClick={goToCoderPage} // Événement de clic pour rediriger vers Coder
               style={{
                 clipPath: `inset(0 0 0 ${100 - mouseX}%)`,
-                cursor: 'pointer' 
+                cursor: 'pointer',
+                transition: 'clip-path 1s ease', // Transition plus lente
               }}
             >
               <img src={coderImage} alt="Coder" />
             </div>
     
             {/* Ligne de séparation entre les deux images*/}
-            <div className="separator" style={{ left: `${100 - mouseX}%` }}></div>
+            <div 
+              className="separator" 
+              style={{ 
+                left: `${100 - mouseX}%`,
+                transition: 'left 1s ease', // Transition plus lente pour le séparateur
+              }}
+            ></div>
     
             {/* Texte sur les images */}
             <div className="text-container">
@@ -64,10 +79,10 @@ const Home = () => {
                 className="text designer-text"
                 style={{
                   opacity: mouseX > 50 ? (50 - mouseX) / 50 : 1,
-                  transition: 'opacity 0.4s ease',
-                }} // Disparaît quand on va à droite
+                  transition: 'opacity 1s ease', // Transition plus lente pour le texte
+                }} 
               >
-                <h2>Designer</h2>
+                <h2>Designe</h2>
                 <h3>Product designer specialising in UI design and design systems.</h3>
               </div>
     
@@ -76,10 +91,10 @@ const Home = () => {
                 className="text coder-text"
                 style={{
                   opacity: mouseX < 50 ? (mouseX - 50) / 50 : 1,
-                  transition: 'opacity 0.4s ease',
-                }} // Disparaît quand on va à gauche
+                  transition: 'opacity 1s ease', // Transition plus lente pour le texte
+                }}
               >
-                <h2>&lt;Coder&gt;</h2>
+                <h2>&lt;Code&gt;</h2>
                 <h3>Front end developer who writes clean, elegant and efficient code.</h3>
               </div>
             </div>
@@ -89,8 +104,7 @@ const Home = () => {
         {/* Section ABOUT */}
         <section className="About">
           <h1>About me</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ultricies ligula, vel sagittis neque. Nulla facilisi. Sed vel tellus at velit fermentum, non fermentum neque faucibus. Maecenas vel dui vel urna consectetur sagittis. Maecenas ultricies ipsum nec velit scelerisque, vel iaculis nisi consectetur. Sed non est vel dui commodo tristique.</p>
-          <p>Ut vel nunc vel justo dignissim semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Donec vel ipsum sed justo tristique bibendum. Vestibulum vel velit id diam faucibus volutpat. Donec facilisis auctor urna, non tincidunt ipsum pellentesque at.</p>
+          <p><h3>Full-stack web and mobile developer, recently graduated from an intensive training program, I specialize in both front-end and back-end development using modern technologies such as JavaScript, React, and Node.js. With several concrete projects and a solid background in motion design, I combine technical skills with a creative approach. Driven by innovation and problem-solving, I am passionate about developing optimized digital solutions tailored to users' needs.</h3></p>
         </section>
       </>
     );

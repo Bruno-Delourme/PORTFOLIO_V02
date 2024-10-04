@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'D-DINE';
+  src: url('/assets/Fonts/D-DINE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home-section {
     position: relative;
     height: 100vh;
@@ -62,11 +69,19 @@
     text-align: center;
     color: #fff;
   }
+
+  .designer-text{
+    font-family: 'D-DINE.ttf', sans-serif;
+  }
   
   .designer-text {
+    
     transition: opacity 0.4s ease; /* Transition fluide pour l'opacité */
   }
   
+  .coder-text{
+    font-family: 'Courier New', Courier, monospace;
+  }
   .coder-text {
     transition: opacity 0.4s ease; /* Transition fluide pour l'opacité */
   }
@@ -74,6 +89,7 @@
   h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    font-style: italic;
   }
 
   h3 {
