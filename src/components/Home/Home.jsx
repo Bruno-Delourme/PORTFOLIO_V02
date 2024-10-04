@@ -6,7 +6,7 @@ import coderImage from '../../assets/photo.jpg';
 
 const Home = () => {
     const [mouseX, setMouseX] = useState(50); // Position de la souris en pourcentage
-    const navigate = useNavigate();  // Initialiation useNavigate pour gérer la navigation
+    const navigate = useNavigate();  // Initialisation de useNavigate pour gérer la navigation
   
     const handleMouseMove = (e) => {
       const { clientX } = e;
@@ -19,6 +19,11 @@ const Home = () => {
     const goToDesignerPage = () => {
       navigate('/designer');
     };
+
+    // Fonction pour rediriger vers la page "Coder"
+    const goToCoderPage = () => {
+      navigate('/coder');
+    };
   
     return (
       <>
@@ -28,7 +33,7 @@ const Home = () => {
             {/* Image Designer */}
             <div
               className="image designer"
-              onClick={goToDesignerPage} // Ajout de l'événement de clic pour rediriger
+              onClick={goToDesignerPage} // Événement de clic pour rediriger vers Designer
               style={{
                 clipPath: `inset(0 ${mouseX}% 0 0)`,
                 cursor: 'pointer' 
@@ -40,8 +45,10 @@ const Home = () => {
             {/* Image Coder */}
             <div
               className="image coder"
+              onClick={goToCoderPage} // Événement de clic pour rediriger vers Coder
               style={{
                 clipPath: `inset(0 0 0 ${100 - mouseX}%)`,
+                cursor: 'pointer' 
               }}
             >
               <img src={coderImage} alt="Coder" />
@@ -56,7 +63,7 @@ const Home = () => {
               <div
                 className="text designer-text"
                 style={{
-                  opacity: `${mouseX < 50 ? (50 - mouseX) / 50 : 1}`,
+                  opacity: mouseX < 50 ? (50 - mouseX) / 50 : 1,
                   transition: 'opacity 0.4s ease',
                 }} // Disparaît quand on va à droite
               >
@@ -68,7 +75,7 @@ const Home = () => {
               <div
                 className="text coder-text"
                 style={{
-                  opacity: `${mouseX > 50 ? (mouseX - 50) / 50 : 1}`,
+                  opacity: mouseX > 50 ? (mouseX - 50) / 50 : 1,
                   transition: 'opacity 0.4s ease',
                 }} // Disparaît quand on va à gauche
               >
@@ -81,7 +88,7 @@ const Home = () => {
   
         {/* Section ABOUT */}
         <section className="About">
-          <h1>About Us</h1>
+          <h1>About me</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ultricies ligula, vel sagittis neque. Nulla facilisi. Sed vel tellus at velit fermentum, non fermentum neque faucibus. Maecenas vel dui vel urna consectetur sagittis. Maecenas ultricies ipsum nec velit scelerisque, vel iaculis nisi consectetur. Sed non est vel dui commodo tristique.</p>
           <p>Ut vel nunc vel justo dignissim semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Donec vel ipsum sed justo tristique bibendum. Vestibulum vel velit id diam faucibus volutpat. Donec facilisis auctor urna, non tincidunt ipsum pellentesque at.</p>
         </section>

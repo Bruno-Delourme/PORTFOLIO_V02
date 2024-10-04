@@ -1,10 +1,8 @@
 import './Designer.css';
-import Header from '../Header/Header'; // Importation du Header
 
 const Designer = () => {
     return (
         <div>
-            <Header /> {/* Inclusion du Header */}
             <section className="Designer-section">
                 <div className="Designer-content">
                     <h1>about.</h1>
