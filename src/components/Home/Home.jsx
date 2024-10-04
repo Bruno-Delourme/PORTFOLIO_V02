@@ -63,7 +63,7 @@ const Home = () => {
               <div
                 className="text designer-text"
                 style={{
-                  opacity: mouseX < 50 ? (50 - mouseX) / 50 : 1,
+                  opacity: mouseX > 50 ? (50 - mouseX) / 50 : 1,
                   transition: 'opacity 0.4s ease',
                 }} // Disparaît quand on va à droite
               >
@@ -75,7 +75,7 @@ const Home = () => {
               <div
                 className="text coder-text"
                 style={{
-                  opacity: mouseX > 50 ? (mouseX - 50) / 50 : 1,
+                  opacity: mouseX < 50 ? (mouseX - 50) / 50 : 1,
                   transition: 'opacity 0.4s ease',
                 }} // Disparaît quand on va à gauche
               >

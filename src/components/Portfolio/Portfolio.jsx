@@ -16,8 +16,8 @@ const Portfolio = () => {
         <p><h2>Check out some of my latest design case studies.</h2></p>
         <p><h3>
           I’ve worked for startups, agencies, corporations, government and nasa.
-          Just kidding. I&apos;m a junior Dev. What did you expect ? 
-          I&apos;have few projects, that I&apos;ve made on my own. And right now I&apos;ve just finished the famous exam of 42, &quot;La Piscine&quot;. 
+          Just kidding. But as you can see<p> 
+          I&apos;have few projects, that I&apos;ve made on my own. </p> Click on contact to check my dispo. 
 
           </h3></p>
       </div>
