@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './Home.css';
-import designerImage from '../../../public/courbet.jpg';  
-import coderImage from '../../../public/photo.jpg';  
+import designerImage from '../../assets/courbet.jpg';  
+import coderImage from '../../assets/photo.jpg';  
 
 const Home = () => {
-    const [mouseX, setMouseX] = useState(50); // La position de la souris en pourcentage
+    const [mouseX, setMouseX] = useState(50); // Position de la souris en pourcentage
+    const navigate = useNavigate();  // Initialiation useNavigate pour gérer la navigation
   
     const handleMouseMove = (e) => {
       const { clientX } = e;
@@ -12,62 +14,79 @@ const Home = () => {
       const newMouseX = ((clientX - left) / width) * 100; 
       setMouseX(newMouseX);  // Calcul direct sans inversion ici
     };
+
+    // Fonction pour rediriger vers la page "Designer"
+    const goToDesignerPage = () => {
+      navigate('/designer');
+    };
   
     return (
-      <section className="home-section" onMouseMove={handleMouseMove}>
-        <div className="image-container">
-          {/* Image Designer */}
-          <div
-            className="image designer"
-            style={{
-              clipPath: `inset(0 ${mouseX}% 0 0)`,
-            }}
-          >
-            <img src={designerImage} alt="Designer" />
-          </div>
-  
-          {/* Image Coder */}
-          <div
-            className="image coder"
-            style={{
-              clipPath: `inset(0 0 0 ${100 - mouseX}%)`,
-            }}
-          >
-            <img src={coderImage} alt="Coder" />
-          </div>
-  
-          {/* Ligne de séparation */}
-          <div className="separator" style={{ left: `${100 - mouseX}%` }}></div>
-  
-          {/* Texte sur les images */}
-          <div className="text-container">
-            {/* Texte Designer */}
+      <>
+        {/* Première section */}
+        <section className="home-section" onMouseMove={handleMouseMove}>
+          <div className="image-container">
+            {/* Image Designer */}
             <div
-              className="text designer-text"
+              className="image designer"
+              onClick={goToDesignerPage} // Ajout de l'événement de clic pour rediriger
               style={{
-                opacity: `${mouseX < 50 ? (50 - mouseX) / 50 : 1}`,
-                transition: 'opacity 0.4s ease',
-              }} // Disparaît quand on va à droite
+                clipPath: `inset(0 ${mouseX}% 0 0)`,
+                cursor: 'pointer' 
+              }}
             >
-              <h2>Designer</h2>
-              <p>Product designer specialising in UI design and design systems.</p>
+              <img src={designerImage} alt="Designer" />
             </div>
-  
-            {/* Texte Coder */}
+    
+            {/* Image Coder */}
             <div
-              className="text coder-text"
+              className="image coder"
               style={{
-                opacity: `${mouseX > 50 ? (mouseX - 50) / 50 : 1}`,
-                transition: 'opacity 0.4s ease',
-              }} // Disparaît quand on va à gauche
+                clipPath: `inset(0 0 0 ${100 - mouseX}%)`,
+              }}
             >
-              <h2>&lt;Coder&gt;</h2>
-              <p>Front end developer who writes clean, elegant and efficient code.</p>
+              <img src={coderImage} alt="Coder" />
+            </div>
+    
+            {/* Ligne de séparation entre les deux images*/}
+            <div className="separator" style={{ left: `${100 - mouseX}%` }}></div>
+    
+            {/* Texte sur les images */}
+            <div className="text-container">
+              {/* Texte Designer */}
+              <div
+                className="text designer-text"
+                style={{
+                  opacity: `${mouseX < 50 ? (50 - mouseX) / 50 : 1}`,
+                  transition: 'opacity 0.4s ease',
+                }} // Disparaît quand on va à droite
+              >
+                <h2>Designer</h2>
+                <h3>Product designer specialising in UI design and design systems.</h3>
+              </div>
+    
+              {/* Texte Coder */}
+              <div
+                className="text coder-text"
+                style={{
+                  opacity: `${mouseX > 50 ? (mouseX - 50) / 50 : 1}`,
+                  transition: 'opacity 0.4s ease',
+                }} // Disparaît quand on va à gauche
+              >
+                <h2>&lt;Coder&gt;</h2>
+                <h3>Front end developer who writes clean, elegant and efficient code.</h3>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+  
+        {/* Section ABOUT */}
+        <section className="About">
+          <h1>About Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ultricies ligula, vel sagittis neque. Nulla facilisi. Sed vel tellus at velit fermentum, non fermentum neque faucibus. Maecenas vel dui vel urna consectetur sagittis. Maecenas ultricies ipsum nec velit scelerisque, vel iaculis nisi consectetur. Sed non est vel dui commodo tristique.</p>
+          <p>Ut vel nunc vel justo dignissim semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Donec vel ipsum sed justo tristique bibendum. Vestibulum vel velit id diam faucibus volutpat. Donec facilisis auctor urna, non tincidunt ipsum pellentesque at.</p>
+        </section>
+      </>
     );
-  };
-  
+};
+
 export default Home;
