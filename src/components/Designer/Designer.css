@@ -38,7 +38,7 @@
 }
 
 .Designer-gallery img {
-    width: calc(50% - 10px); /* Chaque image occupe environ la moitié de l'espace avec une petite marge */
+    width: calc(50% - 10px); 
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
@@ -51,7 +51,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajout d'une image de côté si besoin */
+
 .Designer-image {
     width: 45%;
     display: flex;
