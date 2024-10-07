@@ -5,6 +5,8 @@ import piMoviesMobHome from '../../assets/piMoviesMobHome.jpg';
 import piMoviesMobile from '../../assets/piMoviesMobile.jpg';
 import piMoviesMobZoom from '../../assets/piMoviesMobZoom.jpg';
 import piMoviesZoom from '../../assets/piMoviesZoom.jpg';
+import bandeDemo from '../../assets/bandeDemo.mp4';
+import screenBandeDemo from '../../assets/screenBandeDemo.png'; // Image miniature
 import './Portfolio.css';
 
 // Utilisez le tableau d'images avec les imports
@@ -21,6 +23,7 @@ const Portfolio = () => {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showContent, setShowContent] = useState(false); // État pour l'animation
+  const [isVideoOpen, setIsVideoOpen] = useState(false); // État pour gérer la modal vidéo
 
   useEffect(() => {
     // Déclencher l'animation après un léger délai
@@ -50,6 +53,11 @@ const Portfolio = () => {
     setPop(!pop);
   };
 
+  // Fonction pour ouvrir/fermer la modal vidéo
+  const toggleVideoModal = () => {
+    setIsVideoOpen(!isVideoOpen);
+  };
+
   return (
     <div className="portfolio">
       {/* Header section avec la classe "show" pour l'animation */}
@@ -58,9 +66,9 @@ const Portfolio = () => {
         <h2>Check out some of my latest design case studies.</h2>
         <h3>
           I’ve worked for startups, agencies, corporations, government and nasa.
-          Just kidding. But as you can see
-          <p> I&apos;have few projects, that I&apos;ve made on my own.</p>
-          Click on contact to check my dispo.
+          Just kidding. But as you can see :
+          <h3>I&apos;have few projects, that I&apos;ve made on my own.</h3>
+          <h4>Click on contact to check my dispo.</h4>
         </h3>
       </div>
 
@@ -90,26 +98,36 @@ const Portfolio = () => {
             <p>site API cinema</p>
           </div>
         </div>
-        {/* Autres cartes */}
+
+        {/* Carte avec la vidéo (Projet 2) */}
         <div className={`card ${pop ? 'pop' : ''}`}>
-          <img src="https://via.placeholder.com/150" alt="" />
+          <img
+            src={screenBandeDemo} // Utilisation de l'image miniature
+            alt="Projet 2"
+            onClick={toggleVideoModal} // Ouvrir la modal vidéo
+            style={{ cursor: 'pointer' }}
+          />
           <div className="card-content">
-            <h3>Projet 2</h3>
-            <p>lorem ipsum</p>
+            <h3>Bande Demo</h3>
+            <p>Motion Designer / FX</p>
           </div>
         </div>
       </div>
 
-      {/* More case studies */}
-      <div className="more-studies">
-        <div className={`card ${pop ? 'pop' : ''}`}>
-          <img src="https://via.placeholder.com/150" alt="" />
-          <div className="card-content">
-            <h3>Projet 3</h3>
+      {/* Modal vidéo */}
+      {isVideoOpen && (
+        <div className="video-modal">
+          <div className="video-modal-content">
+            <button className="close-button" onClick={toggleVideoModal}>
+              X
+            </button>
+            <video controls autoPlay className="video-player">
+              <source src={bandeDemo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
-        {/* Autres cartes */}
-      </div>
+      )}
 
       {/* Carrousel */}
       {isCarouselOpen && (
