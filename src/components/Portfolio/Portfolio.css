@@ -1,11 +1,17 @@
-/* Portfolio.css */
+/*FONTS*/
 @font-face {
     font-family: 'D-DINE';
     src: url('../../assets/Fonts/D-DIN.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
-
+  @font-face {
+    font-family: 'Proxima';
+    src: url('../../assets/Fonts/Proxima.otf') format('opentype'); /* 'opentype' pour les fichiers .otf */
+    font-weight: normal;
+    font-style: normal;
+}
+/* Portfolio.css */
 .portfolio {
     width: 100%;
     max-width: 1200px;
@@ -17,7 +23,7 @@
   .portfolio-container {
     text-align: left;
     margin-bottom: 40px;
-    font-family: 'D-DINE', sans-serif;
+    font-family: 'Proxima', sans-serif;
     width: 100%; 
     max-width: 100%; /* Empêche que les éléments ne débordent */
     overflow: hidden; 
@@ -25,7 +31,7 @@
   
   .portfolio-container h1 {
     font-size: 48px;
-    font-weight: bold;
+    font-weight: bolder;
     color: #2d2b2b;
   }
   

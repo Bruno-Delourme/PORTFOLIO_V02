@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Proxima';
+  src: url('../../assets/Fonts/Proxima.otf') format('opentype'); /* 'opentype' pour les fichiers .otf */
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home-section {
     position: relative;
     height: 100vh;
@@ -110,6 +117,8 @@
     margin-right: 20%;
     margin-left: 20%;
     margin-top: 30px;
+    font-family: 'Proxima', sans-serif;
+    margin-bottom: 40px;
   }
   
   .about h1, .about h3 {
