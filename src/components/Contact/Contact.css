@@ -58,6 +58,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 60px 20px;
+    font-family:  'Proxima', sans-serif;
   }
   
   .contact-left {
@@ -199,59 +200,62 @@ body, html {
     }
   }
 
-  /* BUTTONS SOCIAL MEDIA*/
-  .social-links,.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .social-btn {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    font-family: 'Titillium Web', sans-serif;
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
-    background: white;
-    margin: 5px;
-    transition: 0.3s;
-    justify-content: center;
-  }
-  
-  .social-btn svg {
-    height: 24px;
-    width: 24px;
-  }
-  
-  .social-btn span {
-    width: 0px;
-    overflow: hidden;
-    transition: 0.3s;
-    text-align: center;
-    margin-left: 5px;
-  }
-  
-  .social-btn:hover {
-    width: 150px;
-    border-radius: 5px;
-  }
-  
-  .social-btn:hover span {
-    padding: 2px;
-    width: 80px;
-  }
-  
-  #twitter svg {
-    fill: #1da1f2;
-  }
-  
-  #linkedin svg {
-    fill: #0e76a8;
-  }
-  
-  #github {
-    fill: #333;
-  }
-  
+ /* BUTTONS SOCIAL MEDIA */
+.social-links,
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  display: flex; /* Ajouté */
+  align-items: center; /* Centrer le contenu verticalement */
+  justify-content: flex-start; /* Aligner à gauche */
+  height: 50px;
+  width: 50px; /* Taille par défaut uniquement pour l'icône */
+  font-family: 'Proxima', sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 5px;
+  transition: width 0.3s ease; /* L'extension se fait sur la largeur */
+  overflow: hidden; /* Empêche le contenu de déborder */
+  padding-left: 30px;
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+  transition: transform 0.3s ease; /* Optionnel: effet sur l'icône lors du hover */
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+  transition: width 0.3s ease;
+  text-align: center;
+  margin-left: 5px;
+}
+
+/* Effet au survol */
+.social-btn:hover {
+  width: 250px; /* La largeur s'étend pour inclure le texte */
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  width: auto; /* Le texte prend sa place lors du hover */
+}
+
+/* Style des icônes */
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github svg {
+  fill: #333;
+}
