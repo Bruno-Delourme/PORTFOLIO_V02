@@ -1,7 +1,7 @@
 /* Portfolio.css */
 @font-face {
     font-family: 'D-DINE';
-    src: url('/assets/Fonts/D-DINE.ttf') format('truetype');
+    src: url('../../assets/Fonts/D-DIN.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -15,21 +15,60 @@
   }
   
   .portfolio-container {
-    text-align:left;
+    text-align: left;
     margin-bottom: 40px;
     font-family: 'D-DINE', sans-serif;
-    
+    width: 100%; 
+    max-width: 100%; /* Empêche que les éléments ne débordent */
+    overflow: hidden; 
   }
   
   .portfolio-container h1 {
     font-size: 48px;
     font-weight: bold;
+    color: #2d2b2b;
   }
   
-  .portfolio-container p {
-    font-size: 18px;
-    color: #403f3f;
+  .portfolio-container h3 {
+    font-size: 12px;
+    color: #6d6d6d;
   }
+
+  .portfolio-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #212020;
+  }
+
+  .portfolio-container h1,
+  .portfolio-container h2,
+  .portfolio-container h3 {
+    opacity: 0;
+    position: relative;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+  
+  .portfolio-container h1 {
+    transform: translateX(-100vw); /* H1 commence à l'extérieur du viewport par la gauche */
+  }
+  
+  .portfolio-container h2 {
+    transform: translateX(100vw); /* H2 commence à l'extérieur du viewport par la droite */
+  }
+  
+  .portfolio-container h3 {
+    transform: translateX(-100vw); /* H3 commence à l'extérieur du viewport par la gauche */
+  }
+  
+  /* Ajoutez une classe active pour déclencher l'animation */
+  .portfolio-container.show h1,
+  .portfolio-container.show h2,
+  .portfolio-container.show h3 {
+    transform: translateX(0); /* Retour à sa position initiale */
+    opacity: 1;
+  }
+  
+  
   
   .pop-toggle {
     display: flex;
@@ -126,5 +165,49 @@
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+
+  /*PORTFOLIO*/
+
+  .carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
   
+  .carousel-image {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+  
+  .close-button,
+  .prev-button,
+  .next-button {
+    position: absolute;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .close-button {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .prev-button {
+    left: 20px;
+  }
+  
+  .next-button {
+    right: 20px;
+  }
   
