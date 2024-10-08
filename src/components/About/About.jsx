@@ -12,7 +12,7 @@ const About = () => {
             <li>UX design</li>
             <li>Design Systems</li>
             <li>Interaction design</li>
-            <li>&quot;Making it pop&quot;</li>
+            <li>"Making it pop"</li>
           </ul>
         </div>
 

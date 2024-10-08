@@ -4,8 +4,8 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
-  font-family: 'Proxima', sans-serif;
-  background-color: #e9e9e9;
+  font-family: 'Arial', sans-serif;
+  background-color: #e6e6e6;
 }
 
 /* Content Layout */
@@ -20,14 +20,24 @@
 .pie-placeholder {
   width: 200px; /* Space for the pie chart */
   height: 200px;
-  margin: 0 30px; /* Space around the pie */
+  margin: 0 50px; /* Space around the pie */
   background-color: #f0f0f0; /* Background color to indicate the placeholder */
-  border-radius: 50%; /* the future pie chart space */
+  border-radius: 50%; /* To visualize the future pie chart space */
 }
 
 /* Part Designer */
 .part {
   width: 20%;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Apply fade-in by default */
+}
+
+.part-designer {
+  animation: slideInLeft 1.5s forwards, fadeIn 1.5s forwards;
+}
+
+.part-coder {
+  animation: slideInRight 1.5s forwards, fadeIn 1.5s forwards;
 }
 
 .part h2 {
@@ -46,55 +56,6 @@
   font-size: 18px;
 }
 
-.part-coder {
-  animation: slideInRight 1.5s forwards;
-}
-
-.part h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.part ul {
-  list-style: none;
-  padding: 0;
-}
-
-.part ul li {
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-/* Pie Chart */
-.pie-chart {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: conic-gradient(#ccc 0% 40%, #333 40% 100%);
-  margin: 0 50px;
-}
-
-.pie {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.pie.designer {
-  top: 40%;
-  left: 35%;
-}
-
-.pie.coder {
-  top: 40%;
-  right: 35%;
-}
-
 /* Animations */
 @keyframes fadeIn {
   to {
@@ -105,17 +66,21 @@
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
