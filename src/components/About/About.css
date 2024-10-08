@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 70%;
 }
 
 /* Placeholder for the pie chart */
@@ -33,11 +33,11 @@
 }
 
 .part-designer {
-  animation: slideInLeft 1.5s forwards, fadeIn 1.5s forwards;
+  animation: slideInLeft 1s forwards, fadeIn 1s forwards;
 }
 
 .part-coder {
-  animation: slideInRight 1.5s forwards, fadeIn 1.5s forwards;
+  animation: slideInRight 1s forwards, fadeIn 1s forwards;
 }
 
 .part h2 {
