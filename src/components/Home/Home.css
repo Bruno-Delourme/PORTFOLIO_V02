@@ -27,6 +27,7 @@
     height: 80vh; /* Hauteur du conteneur */
     overflow: hidden;
     cursor: pointer;
+    border-radius: 20px;
   }
   
   .image {
