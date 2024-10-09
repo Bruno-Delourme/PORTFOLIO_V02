@@ -1,258 +1,235 @@
-/*FONTS*/
-@font-face {
-    font-family: 'D-DINE';
-    src: url('../../assets/Fonts/D-DIN.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Proxima';
-    src: url('../../assets/Fonts/Proxima.otf') format('opentype'); /* 'opentype' pour les fichiers .otf */
-    font-weight: normal;
-    font-style: normal;
-}
-/* Portfolio.css */
 .portfolio {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    
-  }
-  
-  .portfolio-container {
-    text-align: left;
-    margin-bottom: 40px;
-    font-family: 'Proxima', sans-serif;
-    width: 100%; 
-    max-width: 100%; /* Empêche que les éléments ne débordent */
-    overflow: hidden; 
-  }
-  
-  .portfolio-container h1 {
-    font-size: 64px;
-    font-weight: bolder;
-    color: #2d2b2b;
-  }
-  
-  .portfolio-container h3 {
-    font-size: 15px;
-    color: #6d6d6d;
-  }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
 
-  .portfolio-container h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #212020;
-  }
+.portfolio_container {
+  text-align: left; /* Assure que le texte est aligné à gauche */
+  margin-bottom: 40px;
+  font-family: 'Proxima', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
 
-  .portfolio-container h1,
-  .portfolio-container h2,
-  .portfolio-container h3 {
-    opacity: 0;
-    position: relative;
-    transition: transform 1s ease-out, opacity 1s ease-out;
-  }
-  
-  .portfolio-container h1 {
-    transform: translateX(-100vw); /* H1 commence à l'extérieur du viewport par la gauche */
-  }
-  
-  .portfolio-container h2 {
-    transform: translateX(100vw); /* H2 commence à l'extérieur du viewport par la droite */
-  }
-  
-  .portfolio-container h3 {
-    transform: translateX(-100vw); /* H3 commence à l'extérieur du viewport par la gauche */
-  }
-  
-  /* Ajoutez une classe active pour déclencher l'animation */
-  .portfolio-container.show h1,
-  .portfolio-container.show h2,
-  .portfolio-container.show h3 {
-    transform: translateX(0); /* Retour à sa position initiale */
-    opacity: 1;
-  }
-  
-  
-  
-  .pop-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .pop-toggle label {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
-  .slider {
-    width: 100px;
-    height: 8px;
-    background: #ccc;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  .track {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #ccc;
-    border-radius: 4px;
-  }
-  
-  .thumb {
-    width: 20px;
-    height: 20px;
-    background: #888;
-    border-radius: 50%;
-    position: absolute;
-    top: -6px;
-    left: 0;
-    transition: left 0.3s;
-  }
-  
-  .thumb.active {
-    left: 90px;
-    background: #000000;
-  }
-  
-  .case-studies {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  
-  .more-studies {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .card {
-    width: 30%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    padding: 20px;
-  }
-  
-  .card h3 {
-    font-size: 20px;
-    margin: 0;
-  }
-  
-  .card p {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .card.pop {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
+.portfolio_container h1,
+.portfolio_container h2,
+.portfolio_container h3 {
+  opacity: 0;
+  position: relative;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  text-align: left; /* Forcer l'alignement à gauche pour tous les titres */
+  margin: 0; /* S'assurer qu'aucun margin par défaut ne les centre */
+  padding: 0; /* Enlever tout padding qui pourrait affecter l'alignement */
+}
 
-  /*PORTFOLIO*/
+.portfolio_container h1 {
+  font-size: 64px;
+  font-weight: bolder;
+  color: #2d2b2b;
+  transform: translateX(100%); /* Déplace l'élément hors de la vue à gauche */
+}
 
-  .carousel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .carousel-image {
-    max-width: 80vw;
-    max-height: 80vh;
-  }
-  
-  .close-button,
-  .prev-button,
-  .next-button {
-    position: absolute;
-    background: transparent;
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1001;
-  }
-  
-  .close-button {
-    top: 20px;
-    right: 20px;
-  }
-  
-  .prev-button {
-    left: 20px;
-  }
-  
-  .next-button {
-    right: 20px;
-  }
-  
-  /*VIDEO*/
-  .video-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Pour s'assurer que la modal est au-dessus de tout */
-  }
-  
-  .video-modal-content {
-    position: relative;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    width: 80%; /* Taille de la modal */
-    max-width: 900px; /* Limite maximale */
-  }
-  
-  .video-player {
-    width: 100%;
-    height: auto;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background-color: transparent;
-    color: #fff;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-  }
-  
+.portfolio_container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #212020;
+  transform: translateX(-100%); /* Même chose pour h2 */
+}
+
+.portfolio_container h3 {
+  font-size: 15px;
+  color: #6d6d6d;
+  transform: translateX(100%); /* Même chose pour h3 */
+}
+
+/* Ajoutez une classe active pour déclencher l'animation */
+.portfolio_container.show h1,
+.portfolio_container.show h2,
+.portfolio_container.show h3 {
+  transform: translateX(0); /* Retour à la position initiale (alignée à gauche) */
+  opacity: 1;
+}
+
+/* Pop-toggle styles */
+.pop-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pop-toggle label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.slider {
+  width: 100px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+.track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.thumb {
+  width: 20px;
+  height: 20px;
+  background: #888;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  transition: left 0.3s;
+}
+
+.thumb.active {
+  left: 90px;
+  background: #000000;
+}
+
+/* Case studies */
+.case-studies {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.more-studies {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.card.pop {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio */
+.carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.carousel-image {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.close-button,
+.prev-button,
+.next-button {
+  position: absolute;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-button {
+  top: 20px;
+  right: 20px;
+}
+
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+/* Video modal */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Pour s'assurer que la modal est au-dessus de tout */
+}
+
+.video-modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%; /* Taille de la modal */
+  max-width: 900px; /* Limite maximale */
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}

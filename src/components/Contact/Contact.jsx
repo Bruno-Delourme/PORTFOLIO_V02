@@ -1,30 +1,33 @@
-import deppMe from '../../assets/deppMe.jpg'; 
+import deppMe from '../../assets/deppMe.jpg';
 import './Contact.css';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <div className="contact-container">
-      
-
       <main className="contact-main">
         <div className="contact-left">
           <h1>contact.</h1>
           <p>Get in touch with me via social media or email.</p>
 
-          {/* From Uiverse.io by Pradeepsaranbishnoi */}
           <div className="social-links">
             <div id="twitter" className="social-btn flex-center">
-            <a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="24" width="24">
-      <path fill="#4285F4" d="M24 9.5c1.81 0 3.44.63 4.73 1.67l3.58-3.58C29.61 5.74 26.96 4.5 24 4.5 17.89 4.5 13.02 8.41 10.96 13.78l4.54 3.53C16.76 12.73 19.96 9.5 24 9.5z"/>
-      <path fill="#34A853" d="M43.5 24c0-1.64-.15-3.22-.43-4.74H24v9h10.98c-.47 2.56-1.86 4.72-3.92 6.18l4.86 3.77C40.5 35.37 43.5 30.08 43.5 24z"/>
-      <path fill="#FBBC05" d="M10.96 28.22c-.6-1.77-.96-3.66-.96-5.61s.36-3.84.96-5.61l-4.54-3.53C5.09 16.01 4.5 19.02 4.5 22.61s.59 6.6 1.92 9.53l4.54-3.53z"/>
-      <path fill="#EA4335" d="M24 43.5c3.96 0 7.29-1.32 9.72-3.58l-4.86-3.77c-1.34.9-3.04 1.42-4.86 1.42-4.04 0-7.24-3.23-7.95-7.32l-4.54 3.53C13.02 39.59 17.89 43.5 24 43.5z"/>
-    </svg>
-    <span>delourmebruno@gmail.com</span>
+              <a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" height="24" width="24">
+                  <path fill="#4285F4" d="M24 9.5c1.81 0 3.44.63 4.73 1.67l3.58-3.58C29.61 5.74 26.96 4.5 24 4.5 17.89 4.5 13.02 8.41 10.96 13.78l4.54 3.53C16.76 12.73 19.96 9.5 24 9.5z"/>
+                  <path fill="#34A853" d="M43.5 24c0-1.64-.15-3.22-.43-4.74H24v9h10.98c-.47 2.56-1.86 4.72-3.92 6.18l4.86 3.77C40.5 35.37 43.5 30.08 43.5 24z"/>
+                  <path fill="#FBBC05" d="M10.96 28.22c-.6-1.77-.96-3.66-.96-5.61s.36-3.84.96-5.61l-4.54-3.53C5.09 16.01 4.5 19.02 4.5 22.61s.59 6.6 1.92 9.53l4.54-3.53z"/>
+                  <path fill="#EA4335" d="M24 43.5c3.96 0 7.29-1.32 9.72-3.58l-4.86-3.77c-1.34.9-3.04 1.42-4.86 1.42-4.04 0-7.24-3.23-7.95-7.32l-4.54 3.53C13.02 39.59 17.89 43.5 24 43.5z"/>
+                </svg>
+                <span>delourmebruno@gmail.com</span>
               </a>
             </div>
-          
             <div id="linkedin" className="social-btn flex-center">
               <a href="https://www.linkedin.com/in/bruno-delourme-52394a164/" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +49,13 @@ const Contact = () => {
         </div>
 
         <div className="contact-right">
-          <img src={deppMe} alt="Profile" />
+          <div className={`image-container ${isClicked ? 'clicked' : ''}`} onClick={handleClick}>
+            <img src={deppMe} alt="Profile" className="profile-image" />
+            <div className="overlay">
+              <img src="/src/assets/arrow.jpg" alt="Arrow" className="arrow" />
+              <p className="text">Deep Fake Me</p>
+            </div>
+          </div>
         </div>
       </main>
     </div>

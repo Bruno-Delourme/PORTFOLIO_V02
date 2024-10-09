@@ -103,7 +103,7 @@ const Home = () => {
   
         {/* Section ABOUT */}
         <section className="about">
-          <h1>About me</h1>
+          <h1>About.</h1>
           <p><h3>Full-stack web and mobile developer, recently graduated, I specialize in both front-end and back-end development using modern technologies such as JavaScript, React, and Node.js. With several concrete projects and a solid background in motion design, I combine technical skills with a creative approach. Driven by innovation and problem-solving, I am passionate about developing optimized digital solutions tailored to users needs.</h3></p>
         </section>
       </>

@@ -61,7 +61,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       {/* Header section avec la classe "show" pour l'animation */}
-      <div className={`portfolio-container ${showContent ? 'show' : ''}`}>
+      <div className={`portfolio_container ${showContent ? 'show' : ''}`}>
         <h1>portfolio.</h1>
         <h2>Check out some of my latest design case studies.</h2>
         <h3>

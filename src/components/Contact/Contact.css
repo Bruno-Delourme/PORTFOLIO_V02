@@ -259,3 +259,52 @@ body, html {
 #github svg {
   fill: #333;
 }
+
+/* IMAGE CONTAINER */
+.image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 100%;
+  transition: filter 0.3s ease; /* Ajoute une transition douce */
+}
+
+.profile-image:hover {
+  filter: grayscale(50%); /* Grise l'image à 50% lors du survol */
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Cache l'overlay par défaut */
+  text-align: center;
+  color: white;
+}
+
+.arrow {
+  width: 50px;
+  margin-bottom: 10px;
+  
+}
+
+.text {
+  font-size: 16px;
+}
+
+.image-container.clicked .overlay {
+  display: block; /* Affiche l'overlay (flèche + texte) lors du clic */
+}
+
+.image-container .overlay {
+  display: none;
+}
+
+.image-container.clicked .overlay {
+  display: block;
+}
+
