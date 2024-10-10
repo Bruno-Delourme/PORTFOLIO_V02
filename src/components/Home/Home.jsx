@@ -73,7 +73,7 @@ const Home = () => {
             ></div>
     
             {/* Texte sur les images */}
-            <div className="text-container">
+            <div className="text_container">
               {/* Texte Designer */}
               <div
                 className="text designer-text"

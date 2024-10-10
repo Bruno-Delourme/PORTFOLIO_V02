@@ -66,6 +66,7 @@
   align-items: center;
   font-size: 18px;
   margin-right: 10px;
+  font-family: 'Proxima', sans-serif;
 }
 
 .slider {
@@ -129,6 +130,7 @@
 
 .card-content {
   padding: 20px;
+  font-family: 'Proxima', sans-serif;
 }
 
 .card h3 {

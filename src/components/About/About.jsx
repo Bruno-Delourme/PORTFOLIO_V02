@@ -25,11 +25,11 @@ const About = () => {
         <div className="part part-coder">
           <h2>Part coder</h2>
           <ul>
-            <li>Front-end development</li>
-            <li>HTML / CSS</li>
-            <li>JavaScript (kinda)</li>
+            <li>Full Stack</li>
+            <li>JavaScript</li>
+            <li>React</li>
             <li>Swearing at my computer</li>
-            <li>Eating pizza</li>
+            <li>Hugging my dog</li>
           </ul>
         </div>
       </div>
