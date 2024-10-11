@@ -90,10 +90,11 @@
   }
   
   .coder-text{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace !important;
   }
   .coder-text {
     transition: opacity 0.4s ease; /* Transition fluide pour l'opacité */
+    
   }
   
   h2 {

@@ -1,5 +1,5 @@
 /* Container */
-.about-container {
+.aboutContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,21 +9,14 @@
 }
 
 /* Content Layout */
-.about-content {
+.aboutContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 70%;
 }
 
-/* Placeholder for the pie chart */
-.pie-placeholder {
-  width: 200px; /* Space for the pie chart */
-  height: 200px;
-  margin: 0 50px; /* Space around the pie */
-  background-color: #f0f0f0; /* Background color to indicate the placeholder */
-  border-radius: 50%; /* To visualize the future pie chart space */
-}
+
 
 /* Part Designer */
 .part {

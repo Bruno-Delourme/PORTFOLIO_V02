@@ -1,9 +1,10 @@
 import './About.css';
+import PieChart from '../PieChart/PieChart'
 
 const About = () => {
   return (
-    <div className="about-container">
-      <div className="about-content">
+    <div className="aboutContainer">
+      <div className="aboutContent">
         {/* Part Designer */}
         <div className="part part-designer">
           <h2>Part designer</h2>
@@ -18,7 +19,7 @@ const About = () => {
 
         {/* Placeholder for Pie Chart */}
         <div className="pie-placeholder">
-          {/* The pie chart will be added here later */}
+        <PieChart />
         </div>
 
         {/* Part Coder */}
