@@ -4,14 +4,16 @@
     height: 350px;
     border-radius: 50%;
     background-image: conic-gradient(
-      lightgray 0% 66%, 
-      #333333 66% 100%
+      rgb(196, 204, 206) 0% 66%, 
+      #323d41 66% 100%
     );
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
     filter: drop-shadow(11px 9px 19px #2020208a);
+    font-family: 'Proxima', sans-serif;
+    font-size: larger;
   }
   
   .slice {

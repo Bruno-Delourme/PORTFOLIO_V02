@@ -1,11 +1,31 @@
+/* Page Container */
+.aboutPage {
+  font-family: 'Proxima', sans-serif;
+  background-color: #eeeeee;
+  height: 100vh;
+  filter: drop-shadow(-1px 7px 9px #232323c3);
+  padding: 20px;
+
+}
+
+/* Title */
+.title {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: left; /* Aligner à gauche */
+  margin-left: 90px;
+  margin-bottom: 40px;
+  opacity: 0; /* Cacher au début pour l'animation */
+  animation: slideInLeft 1s forwards, fadeIn 1s forwards; 
+  animation-delay: 0.2s; 
+}
+
 /* Container */
 .aboutContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 80vh;
-  font-family: 'Arial', sans-serif;
-  background-color: #e6e6e6;
 }
 
 /* Content Layout */
@@ -16,27 +36,24 @@
   width: 70%;
 }
 
-
-
 /* Part Designer */
 .part {
   width: 20%;
   opacity: 0;
-  animation: fadeIn 1s forwards; /* Apply fade-in by default */
+  animation: fadeIn 1s forwards;
 }
 
-.part-designer {
+.partDesigner {
   animation: slideInLeft 1s forwards, fadeIn 1s forwards;
 }
 
-.part-coder {
+.partCoder {
   animation: slideInRight 1s forwards, fadeIn 1s forwards;
 }
 
 .part h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  font-style: normal;
 }
 
 .part ul {
