@@ -14,7 +14,7 @@ const data = [
     gradientId: 'gradient2',
   },
   {
-    name: 'Figma',
+    name: 'C',
     level: 95,
     gradientId: 'gradient3',
   },
@@ -51,15 +51,15 @@ const SkillsChart = () => {
 
   return (
     <div style={{ width: '100%', height: 400 }}>
-      <h2 className="skillsTitle">My Skills</h2>
+      <h2 className="skillsTitle">my skills</h2>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}
           margin={{
-            top: 20,
-            right: 30,
-            left: 0,
-            bottom: 5,
+            top: 0,
+            right: 50,
+            left: 200,
+            bottom: 50,
           }}
         >
           {/* Définition des dégradés */}
@@ -88,7 +88,7 @@ const SkillsChart = () => {
 
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis />
+          <YAxis dataKey="level" /> 
           <Tooltip />
           <Legend />
           <Bar dataKey="level" radius={[10, 10, 0, 0]}>
