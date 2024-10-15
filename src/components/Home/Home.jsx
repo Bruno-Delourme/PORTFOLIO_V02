@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './Home.css';
-import designerImage from '../../assets/courbet.jpg';  
-import coderImage from '../../assets/photo.jpg';  
+import designerImage from '../../assets/courbetv010.jpg';  
+import coderImage from '../../assets/photo0.jpg';  
 
 const Home = () => {
     const [mouseX, setMouseX] = useState(40); // Position de la souris initialisée à 40%
