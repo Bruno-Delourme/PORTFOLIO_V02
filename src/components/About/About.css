@@ -3,7 +3,7 @@
   font-family: 'Proxima', sans-serif;
   background-color: #eeeeee;
   height: 100vh;
-  filter: drop-shadow(-1px 7px 9px #232323c3);
+  box-shadow: 5px 5px 10px 1px #00000079;
   padding: 20px;
   height: 90vh;
 
@@ -13,7 +13,7 @@
 .title {
   font-size: 60px;
   font-weight: bold;
-  text-align: left; /* Aligner à gauche */
+  text-align: left; 
   margin-left: 90px;
   margin-bottom: 40px;
   opacity: 0; /* Cacher au début pour l'animation */
@@ -50,11 +50,14 @@
 
 .partCoder {
   animation: slideInRight 1s forwards, fadeIn 1s forwards;
+  ;
 }
 
 .part h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  color: black;
+  font-style: normal;
 }
 
 .part ul {
@@ -65,6 +68,15 @@
 .part ul li {
   margin-bottom: 10px;
   font-size: 18px;
+}
+
+.about h3{
+  color: black;
+}
+
+.skillsTitle{
+  color: black;
+  box-shadow: none; /*impossible a enlever*/
 }
 
 /* Animations */

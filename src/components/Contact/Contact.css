@@ -242,12 +242,12 @@ body, html {
 
 /* Effet au survol */
 .social-btn:hover {
-  width: 250px; /* La largeur s'étend pour inclure le texte */
+  width: 250px; /* pour inclure le texte */
   border-radius: 5px;
 }
 
 .social-btn:hover span {
-  width: auto; /* Le texte prend sa place lors du hover */
+  width: auto; /* texte prend sa place lors du hover */
 }
 
 /* Style des icônes */
@@ -265,7 +265,7 @@ body, html {
   display: inline-block;
   cursor: pointer;
   width: 100%;
-  max-width: 500px; /* Largeur maximale de l'image */
+  max-width: 500px; 
 }
 
 .profile-image {

@@ -51,7 +51,7 @@ const SkillsChart = () => {
 
   return (
     <div style={{ width: '100%', height: 400 }}>
-      <h2 className="skillsTitle">my skills</h2>
+      <h2 className="skillsTitle">my skills.</h2>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={data}

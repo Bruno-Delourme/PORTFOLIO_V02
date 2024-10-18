@@ -1,51 +1,70 @@
 .pie-chart {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background-image: conic-gradient(
-      rgb(196, 204, 206) 0% 66%, 
-      #323d41 66% 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    filter: drop-shadow(11px 9px 19px #2020208a);
-    font-family: 'Proxima', sans-serif;
-    font-size: larger;
+  position: relative;
+  width: 80vw; 
+  height: 80vw; 
+  max-width: 350px; 
+  max-height: 350px; 
+  border-radius: 50%;
+  background-image: conic-gradient(
+    rgb(196, 204, 206) 0% 66%, 
+    #323d41 66% 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  filter: drop-shadow(11px 9px 19px #2020208a);
+  font-family: 'Proxima', sans-serif;
+  font-size: larger;
+}
+
+.slice {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+}
+
+.design {
+  left: 0;
+  transform: rotate(0deg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+}
+
+.code {
+  right: 0;
+  transform: rotate(0deg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgb(0, 0, 0);
+}
+
+.slice span {
+  position: absolute;
+  transform: rotate(0deg);
+  font-weight: bold;
+}
+
+/* ----------- Responsive adjustments for smaller screens ----------- */
+@media (max-width: 768px) {
+  .pie-chart {
+    width: 70vw; 
+    height: 70vw;
   }
-  
-  .slice {
-    position: absolute;
-    width: 35%;
-    height: 100%;
-    top: 0;
-    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .pie-chart {
+    width: 60vw; 
+    height: 60vw;
   }
-  
-  .design {
-    left: 0;
-    transform: rotate(0deg);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    color: white;
-  }
-  
-  .code {
-    right: 0;
-    transform: rotate(0deg);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: rgb(0, 0, 0);
-  }
-  
+
   .slice span {
-    position: absolute;
-    transform: rotate(0deg); 
-    
-    font-weight: bold;
+    font-size: 0.9rem; 
   }
-  
+}
