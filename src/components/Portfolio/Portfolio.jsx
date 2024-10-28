@@ -65,8 +65,8 @@ const Portfolio = () => {
         <h1>portfolio.</h1>
         <h2>Check out some of my latest design case studies.</h2>
         <h3>
-          I’ve worked for startups, agencies, corporations, government and nasa.
-          Just kidding. But as you can see :
+          I’ve worked for startups, agencies, corporations, and one short movie for nasa.
+          True Story. And as you can see :
           <h3>I&apos;have few projects, that I&apos;ve made on my own.</h3>
           <h4>Click on contact to check my dispo.</h4>
         </h3>

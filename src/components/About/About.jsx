@@ -2,11 +2,23 @@ import './About.css';
 import PieChart from '../PieChart/PieChart';
 import SkillsChart from '../SkillsChart/SkillsChart'; 
 
+
 const About = () => {
   return (
     <div className="aboutPage">
       {/* Titre séparé */}
       <h1 className="title">about.</h1> 
+
+        {/* Lien de téléchargement du CV */}
+      <div className='resume'>
+      {/* Miniature du CV */}
+  <img src="/miniCV.png" alt="Miniature du CV" className="cv-thumbnail" />
+  
+  {/* Lien de téléchargement du CV */}
+  <a href="/CV.png" download="CV.png" className="cv">
+    Download my resume
+  </a>
+</div>
       
       {/* Contenu principal */}
       <div className="aboutContainer">
