@@ -82,8 +82,8 @@ body, html {
   .social-links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 15px;
+    align-items: center;
   }
   
   .social-links a {
@@ -213,45 +213,88 @@ body, html {
 
 .social-btn {
   cursor: pointer;
-  display: flex; /* Ajouté */
-  align-items: center; /* Centrer le contenu verticalement */
-  justify-content: flex-start; /* Aligner à gauche */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   height: 50px;
-  width: 50px; /* Taille par défaut uniquement pour l'icône */
+  width: 50px;
   font-family: 'Proxima', sans-serif;
   color: #333;
   border-radius: 10px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   background: white;
   margin: 5px;
-  transition: width 0.3s ease; /* L'extension se fait sur la largeur */
-  overflow: hidden; /* Empêche le contenu de déborder */
-  padding-left: 30px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 0 15px;
+  position: relative;
 }
 
 .social-btn svg {
   height: 24px;
   width: 24px;
-  transition: transform 0.3s ease; /* Optionnel: effet sur l'icône lors du hover */
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .social-btn span {
-  width: 0px;
-  overflow: hidden;
-  white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
-  transition: width 0.3s ease;
-  text-align: center;
-  margin-left: 5px;
+  position: absolute;
+  left: 50px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 /* Effet au survol */
 .social-btn:hover {
-  width: 250px; /* pour inclure le texte */
-  border-radius: 5px;
+  width: 300px;
 }
 
 .social-btn:hover span {
-  width: auto; /* texte prend sa place lors du hover */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .social-btn {
+    height: 45px;
+  }
+
+  .social-btn svg {
+    left: 12px;
+  }
+
+  .social-btn:hover {
+    width: 280px;
+  }
+
+  .social-btn span {
+    left: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-btn {
+    height: 40px;
+  }
+
+  .social-btn svg {
+    height: 20px;
+    width: 20px;
+    left: 10px;
+  }
+
+  .social-btn:hover {
+    width: 260px;
+  }
+
+  .social-btn span {
+    left: 40px;
+  }
 }
 
 /* Style des icônes */

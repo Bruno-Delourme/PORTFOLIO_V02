@@ -1,52 +1,70 @@
-/* Base styles */
+/* Styles de base */
 .aboutPage {
   font-family: 'Proxima', sans-serif;
   background-color: #eeeeee;
   min-height: 100vh;
-  box-shadow: 5px 5px 10px 1px #00000079;
-  padding: 20px;
-  padding-top: 100px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 100px 20px 50px 20px; /* Ajusté le padding-top pour le header */
 }
 
+/* Titre */
 .title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: bold;
   text-align: left;
+  margin-bottom: 40px;
   margin-left: 20px;
-  margin-bottom: 30px;
 }
 
+/* Container principal */
 .aboutContainer {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.aboutContent {
-  display: flex;
-  gap: 50px;
-  justify-content: center;
+/* Section CV */
+.resume {
   width: 100%;
-  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
+.cv-thumbnail {
+  width: clamp(40px, 8vw, 60px);
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cv {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+/* Contenu About */
+.aboutContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* Sections Part Designer/Coder */
 .part {
   flex: 1;
-  min-width: 300px;
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .part h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: black;
 }
 
 .part ul {
@@ -57,30 +75,29 @@
 .part ul li {
   font-size: clamp(1rem, 2vw, 1.2rem);
   margin-bottom: 15px;
-  
 }
 
-.resume {
+/* Section Skills */
+.skillsPage {
   width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 50px 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 30px;
 }
 
-.cv-thumbnail {
-  width: clamp(40px, 8vw, 60px);
-  height: auto;
+.skills-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Styles spécifiques pour le graphique */
-.recharts-surface {
-  width: 100% !important; /* Force la largeur à 100% */
-  max-width: 800px !important; /* Limite la largeur maximale */
-  margin: 0 auto !important; /* Centre le graphique */
-  display: block !important; /* Assure que le centrage fonctionne */
-}
-
+/* Styles pour le graphique Recharts */
 .recharts-wrapper {
   width: 100% !important;
   max-width: 800px !important;
@@ -89,114 +106,95 @@
   justify-content: center !important;
 }
 
-/* Conteneur du graphique */
-.chart-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-  padding: 0 20px;
+.recharts-surface {
+  width: 100% !important;
+  max-width: 800px !important;
 }
 
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+  .aboutContent {
+    gap: 30px;
+  }
+
+  .part {
+    max-width: 350px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .aboutPage {
-    padding-top: 90px;
+    padding: 90px 15px 40px 15px;
   }
 
   .aboutContent {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
   }
 
   .part {
-    width: 90%;
-    min-width: unset;
+    max-width: 100%;
     text-align: center;
   }
 
-  .part ul {
-    padding: 0;
+  .skills-container {
+    padding: 0 15px;
+  }
+
+  .recharts-wrapper,
+  .recharts-surface {
+    max-width: 600px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
   .aboutPage {
-    padding: 15px;
-    padding-top: 80px;
+    padding: 80px 10px 30px 10px;
   }
 
   .title {
-    font-size: 1.8rem;
     margin-left: 10px;
+    margin-bottom: 30px;
+  }
+
+  .aboutContent {
+    gap: 30px;
   }
 
   .part h2 {
-    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 
   .part ul li {
-    font-size: 1rem;
+    margin-bottom: 12px;
   }
 
-  .aboutContainer {
-    padding: 0 15px;
+  .skills-container {
+    padding: 0 10px;
   }
 
-  .part {
-    width: 100%;
+  .recharts-wrapper,
+  .recharts-surface {
+    max-width: 100% !important;
   }
 }
 
 /* Pour les écrans en mode paysage */
 @media screen and (max-height: 480px) and (orientation: landscape) {
-  .aboutPage {
-    padding-top: 70px;
+  .aboutPage,
+  .skillsPage {
+    min-height: auto;
+    padding: 70px 15px 30px 15px;
   }
 
   .aboutContent {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-}
 
-/* Nouvelle section pour les skills */
-.skillsPage {
-  width: 100%;
-  background-color: #fff; /* Couleur de fond différente pour distinguer la section */
-  padding: 50px 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skills-container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .skillsPage {
-    padding: 30px 0;
-  }
-  
-  .skills-container {
-    padding: 0 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .skillsPage {
-    padding: 20px 0;
-  }
-  
-  .skills-container {
-    padding: 0 10px;
+  .part {
+    flex: 0 1 calc(50% - 20px);
   }
 }
