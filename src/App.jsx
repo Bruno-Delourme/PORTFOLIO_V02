@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
@@ -7,6 +7,9 @@ import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <Router>
       <div className="App">
@@ -18,7 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Routes>
-        <Footer />
+        {!isHome && <Footer />}
       </div>
     </Router>
   );

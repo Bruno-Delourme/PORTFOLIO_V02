@@ -1,10 +1,10 @@
 import './Home.css';
 import designerImage from '../../assets/courbetBlanc.png';  
 import coderImage from '../../assets/photoBlanc2.png';  
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [mousePosition, setMousePosition] = useState(50); // Initialisé à 50% (milieu)
+    const [mousePosition, setMousePosition] = useState(50); // 
 
     const handleMouseMove = (e) => {
         const { left, width } = e.currentTarget.getBoundingClientRect();
@@ -14,6 +14,13 @@ const Home = () => {
         const invertedPosition = 100 - newPosition;
         setMousePosition(invertedPosition);
     };
+
+    useEffect(() => {
+        document.body.classList.add('home-page');
+        return () => {
+            document.body.classList.remove('home-page');
+        };
+    }, []);
 
     return (
       <>
