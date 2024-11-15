@@ -1,92 +1,52 @@
-/* Page Container */
+/* Base styles */
 .aboutPage {
   font-family: 'Proxima', sans-serif;
   background-color: #eeeeee;
-  height: 100vh;
+  min-height: 100vh;
   box-shadow: 5px 5px 10px 1px #00000079;
   padding: 20px;
-  height: 110vh;
-
-}
-
-/* Title */
-.title {
-  font-size: 60px;
-  font-weight: bold;
-  text-align: left; 
-  margin-left: 90px;
-  margin-bottom: 40px;
-  opacity: 0; /* Cacher au début pour l'animation */
-  animation: slideInLeft 1s forwards, fadeIn 1s forwards; 
-  animation-delay: 0.2s; 
-}
-
-/* Container */
-.aboutContainer {
+  padding-top: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
 }
 
-.resume {
-  text-align: center;
-  margin-right: 8%;
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.aboutContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
-.resume .cv {
-  color: #000000;
-  text-decoration: none; /
-  font-weight: bold;
-  font-family: 'Proxima', sans-serif; 
- 
-}
-
-.resume .cv:hover {
-  color: #2505f7; 
-}
-
-.resume .cv-thumbnail {
-  width: 60px; /* Ajuste la largeur selon tes besoins */
-  height: auto;
-  margin-bottom: 10px; /* Espace entre la miniature et le lien */
-  border: 1px solid #ccc; /* Optionnel : ajout d’une bordure */
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Optionnel : ombre */
-}
-
-
-/* Content Layout */
 .aboutContent {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 70%;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
 }
 
-/* Part Designer */
 .part {
-  width: 20%;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-.partDesigner {
-  animation: slideInLeft 1s forwards, fadeIn 1s forwards;
-}
-
-.partCoder {
-  animation: slideInRight 1s forwards, fadeIn 1s forwards;
-  ;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .part h2 {
-  font-size: 24px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 20px;
-  color: black;
-  font-style: normal;
 }
 
 .part ul {
@@ -95,44 +55,148 @@
 }
 
 .part ul li {
-  margin-bottom: 10px;
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 15px;
+  
 }
 
-.about h3{
-  color: black;
+.resume {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.skillsTitle{
-  color: black;
-  box-shadow: none; /*impossible a enlever*/
+.cv-thumbnail {
+  width: clamp(40px, 8vw, 60px);
+  height: auto;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+/* Styles spécifiques pour le graphique */
+.recharts-surface {
+  width: 100% !important; /* Force la largeur à 100% */
+  max-width: 800px !important; /* Limite la largeur maximale */
+  margin: 0 auto !important; /* Centre le graphique */
+  display: block !important; /* Assure que le centrage fonctionne */
+}
+
+.recharts-wrapper {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Conteneur du graphique */
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .aboutPage {
+    padding-top: 90px;
+  }
+
+  .aboutContent {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .part {
+    width: 90%;
+    min-width: unset;
+    text-align: center;
+  }
+
+  .part ul {
+    padding: 0;
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
+@media screen and (max-width: 480px) {
+  .aboutPage {
+    padding: 15px;
+    padding-top: 80px;
   }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+
+  .title {
+    font-size: 1.8rem;
+    margin-left: 10px;
+  }
+
+  .part h2 {
+    font-size: 1.5rem;
+  }
+
+  .part ul li {
+    font-size: 1rem;
+  }
+
+  .aboutContainer {
+    padding: 0 15px;
+  }
+
+  .part {
+    width: 100%;
   }
 }
 
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
+/* Pour les écrans en mode paysage */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .aboutPage {
+    padding-top: 70px;
   }
-  to {
-    transform: translateX(0);
-    opacity: 1;
+
+  .aboutContent {
+    flex-direction: row;
+  }
+}
+
+/* Nouvelle section pour les skills */
+.skillsPage {
+  width: 100%;
+  background-color: #fff; /* Couleur de fond différente pour distinguer la section */
+  padding: 50px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .skillsPage {
+    padding: 30px 0;
+  }
+  
+  .skills-container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skillsPage {
+    padding: 20px 0;
+  }
+  
+  .skills-container {
+    padding: 0 10px;
   }
 }

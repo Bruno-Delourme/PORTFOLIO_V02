@@ -2,23 +2,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
     background-color: #141313;
     color: #fff;
     font-family: 'D-DINE', sans-serif;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
   }
   
   .nav {
     display: flex;
-    gap: 65px;
-    margin-right: 25px;
-    
+    gap: 40px;
+    align-items: center;
   }
 
   .logo{
-    margin-left: 25px;
-    color: #fff;
-    cursor: pointer;
+    font-size: 1.2rem;
   }
   
   a {
@@ -30,4 +31,100 @@
   a:hover {
     text-decoration: none;
     color: rgba(171, 172, 172, 0.651);
+  }
+
+  /* Ajout du menu burger pour mobile */
+  .burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* Media Queries */
+  @media screen and (max-width: 1024px) {
+    .nav {
+      gap: 30px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav {
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .header {
+      padding: 0 15px;
+      left: 0;
+      right: 0;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 100%;
+      max-width: 300px;
+      background-color: #141313;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transition: right 0.3s ease;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .nav.active {
+      right: 0;
+    }
+
+    .burger-menu {
+      display: block;
+      position: relative;
+      z-index: 1001;
+    }
+
+    /* Animation du burger menu */
+    .burger-menu.active .burger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger-menu.active .burger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-menu.active .burger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .header {
+      padding: 0 10px;
+    }
+  }
+
+  /* Gestion de la hauteur pour les appareils en mode paysage */
+  @media screen and (max-height: 480px) and (orientation: landscape) {
+    .nav {
+      padding: 60px 0;
+      gap: 25px;
+    }
+  }
+
+  /* Pour s'assurer que le contenu principal ne passe pas sous le header */
+  main {
+    padding-top: 70px;
   }

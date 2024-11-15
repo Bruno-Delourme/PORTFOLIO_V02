@@ -2,7 +2,8 @@
 .image-reveal-section {
   position: relative;
   width: 100%;
-  height: 350px; /* Vous pouvez ajuster la hauteur */
+  height: 60vh;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,7 @@
 /* Conteneur des images */
 .imgContainer {
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -46,9 +47,10 @@
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
+  padding: 15px 25px;
   border-radius: 5px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Image droite (Coder) */
@@ -75,9 +77,10 @@
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
+  padding: 15px 25px;
   border-radius: 5px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 /* Séparateur central */
@@ -92,13 +95,13 @@
 
 .fewLines{
   font-family: 'Proxima', sans-serif;
-  margin-left: 20%;
+  margin: 2% 10%;
   margin-bottom: 5%;
   margin-right: 20%;
   margin-top: 2%;
 }
 .fewLinesTitle{
-  font-size: 60px;
+  font-size: 3.5rem;
   font-weight: bold;
   text-align: left; 
   margin-left: 0;
@@ -106,5 +109,151 @@
 
 }
 .line{
-  font-size: 18px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+  .fewLinesTitle {
+    font-size: 3rem;
+  }
+  
+  .fewLines {
+    margin: 2% 8%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .image-reveal-section {
+    height: 50vh;
+  }
+
+  .fewLinesTitle {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .line {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-reveal-section {
+    height: 40vh;
+  }
+
+  .imgContainer {
+    width: 95%;
+  }
+
+  .textLeft, .textRight {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .fewLines {
+    margin: 2% 5%;
+  }
+
+  .fewLinesTitle {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .separator {
+    width: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-reveal-section {
+    height: 35vh;
+    min-height: 250px;
+  }
+
+  .imgContainer {
+    width: 100%;
+  }
+
+  .textLeft, .textRight {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .fewLines {
+    margin: 2% 4%;
+  }
+
+  .fewLinesTitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .line {
+    font-size: 0.9rem;
+  }
+
+  .separator {
+    width: 2px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .image-reveal-section {
+    height: 30vh;
+    min-height: 200px;
+  }
+
+  .textLeft, .textRight {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .fewLinesTitle {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .line {
+    font-size: 0.8rem;
+  }
+}
+
+/* Orientation paysage sur mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .image-reveal-section {
+    height: 80vh;
+  }
+
+  .fewLines {
+    margin: 1% 5%;
+  }
+
+  .fewLinesTitle {
+    margin-bottom: 15px;
+  }
+}
+
+/* Pour les grands écrans */
+@media screen and (min-width: 1600px) {
+  .image-reveal-section {
+    height: 70vh;
+    max-height: 600px;
+  }
+
+  .fewLinesTitle {
+    font-size: 4rem;
+  }
+
+  .line {
+    font-size: 1.3rem;
+  }
+}
+
+/* Pour les écrans à haute densité de pixels */
+@media screen and (min-resolution: 192dpi) {
+  .imgLeft img, .imgRight img {
+    object-fit: cover;
+  }
 }

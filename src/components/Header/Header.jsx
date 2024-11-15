@@ -1,22 +1,41 @@
+import { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    return (
-      <header className="header">
-        <div className="logo">
-          <Link to="/">
-            <h1>PORTFOLIO</h1>
-          </Link>
-        </div>
-        <nav className="nav">
-          <Link to="/">HOME</Link> 
-          <Link to="/about">ABOUT</Link>
-          <Link to="/portfolio">PORTFOLIO</Link> 
-          <Link to="/contact">CONTACT</Link>
-        </nav>
-      </header>
-    );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <header className="header">
+      <div className="logo">
+        <Link to="/" onClick={closeMenu}>LOGO</Link>
+      </div>
+      
+      <div 
+        className={`burger-menu ${isMenuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+      >
+        <div className="burger-line"></div>
+        <div className="burger-line"></div>
+        <div className="burger-line"></div>
+      </div>
+
+      <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/portfolio" onClick={closeMenu}>Portfolio</Link>
+        <Link to="/about" onClick={closeMenu}>About</Link>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

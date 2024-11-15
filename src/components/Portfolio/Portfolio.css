@@ -1,19 +1,19 @@
-
-
 .portfolio {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px;
+  padding-top: 100px;
 }
 
 .portfolio_container {
-  text-align: left; /* Assure que le texte est aligné à gauche */
+  text-align: left;
   margin-bottom: 40px;
   font-family: 'Proxima', sans-serif;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .portfolio_container h1,
@@ -22,40 +22,39 @@
   opacity: 0;
   position: relative;
   transition: transform 1s ease-out, opacity 1s ease-out;
-  text-align: left; /* Forcer l'alignement à gauche pour tous les titres */
-  margin: 0; /* S'assurer qu'aucun margin par défaut ne les centre */
-  padding: 0; /* Enlever tout padding qui pourrait affecter l'alignement */
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
 }
 
 .portfolio_container h1 {
   font-size: 64px;
   font-weight: bolder;
   color: #2d2b2b;
-  transform: translateX(100%); /* Déplace l'élément hors de la vue à gauche */
+  transform: translateX(100%);
 }
 
 .portfolio_container h2 {
   font-size: 20px;
   font-weight: bold;
   color: #212020;
-  transform: translateX(-100%); /* Même chose pour h2 */
+  transform: translateX(-100%);
 }
 
 .portfolio_container h3 {
   font-size: 15px;
   color: #6d6d6d;
-  transform: translateX(100%); /* Même chose pour h3 */
+  transform: translateX(100%);
 }
 
-/* Ajoutez une classe active pour déclencher l'animation */
 .portfolio_container.show h1,
 .portfolio_container.show h2,
 .portfolio_container.show h3 {
-  transform: translateX(0); /* Retour à la position initiale (alignée à gauche) */
+  transform: translateX(0);
   opacity: 1;
 }
 
-/* Pop-toggle styles */
 .pop-toggle {
   display: flex;
   justify-content: center;
@@ -103,7 +102,6 @@
   background: #000000;
 }
 
-/* Case studies */
 .case-studies {
   display: flex;
   justify-content: space-between;
@@ -155,7 +153,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Portfolio */
 .carousel {
   position: fixed;
   top: 0;
@@ -199,18 +196,17 @@
   right: 20px;
 }
 
-/* Video modal */
 .video-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Pour s'assurer que la modal est au-dessus de tout */
+  z-index: 1000;
 }
 
 .video-modal-content {
@@ -218,8 +214,8 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
-  width: 80%; /* Taille de la modal */
-  max-width: 900px; /* Limite maximale */
+  width: 80%;
+  max-width: 900px;
 }
 
 .video-player {
@@ -236,4 +232,87 @@
   font-size: 24px;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio {
+    padding: 20px;
+  }
+
+  .portfolio_container h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .case-studies,
+  .more-studies {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .portfolio_container h1 {
+    font-size: 36px;
+  }
+
+  .portfolio_container h2 {
+    font-size: 18px;
+  }
+
+  .portfolio_container h3 {
+    font-size: 14px;
+  }
+
+  .video-modal-content {
+    width: 95%;
+  }
+
+  .portfolio {
+    padding: 20px;
+    padding-top: 90px;
+  }
+
+  .portfolio_container {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio {
+    padding: 15px;
+    padding-top: 80px;
+  }
+
+  .portfolio_container {
+    margin-top: 10px;
+  }
+
+  .portfolio_container h1 {
+    font-size: 28px;
+  }
+
+  .pop-toggle label {
+    font-size: 16px;
+  }
+
+  .carousel-image {
+    max-width: 95vw;
+  }
+
+  .prev-button,
+  .next-button {
+    font-size: 1.5rem;
+  }
+
+  .close-button {
+    font-size: 20px;
+    top: 5px;
+    right: 10px;
+  }
 }
