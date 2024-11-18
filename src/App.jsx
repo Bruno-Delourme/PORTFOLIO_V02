@@ -6,23 +6,31 @@ import Header from './components/Header/Header';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 
-function App() {
+// Composant séparé pour utiliser useLocation
+function AppContent() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
   return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      {!isHome && <Footer />}
+    </div>
+  );
+}
+
+// Composant App principal avec le Router
+function App() {
+  return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-        {!isHome && <Footer />}
-      </div>
+      <AppContent />
     </Router>
   );
 }
