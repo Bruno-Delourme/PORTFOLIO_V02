@@ -69,7 +69,7 @@ const Home = () => {
 
           {/* Texte de la section */}
           <h1 className='fewLinesTitle'>few things.</h1>
-          <div className='line'>I'm a fullstack JavaScript developer with a passion for motion design, creating dynamic and immersive web experiences. Combining expertise in development and animated design, I bring a unique interactive and visual touch to every project.</div>
+          <div className='line'>I&rsquo;m a fullstack JavaScript developer...</div>
         </section>
       </>
     );
