@@ -66,10 +66,12 @@ const Home = () => {
           </div>
         </section>
         <section className='fewLines'>
-
-          {/* Texte de la section */}
           <h1 className='fewLinesTitle'>few things.</h1>
-          <div className='line'>I&rsquo;m a fullstack JavaScript developer...</div>
+          <div className='line'>I&rsquo;m a fullstack JavaScript developer who focuses on writing clean, elegant and efficient code.</div>
+          <div className='line'>Specialized in React.js for frontend development and Node.js for backend solutions.</div>
+          <div className='line'>My approach combines technical expertise with UI/UX design principles to create engaging user experiences.</div>
+          <div className='line'>Currently working on web applications using modern technologies like React, and Node.jsq.</div>
+          <div className='line'>Always eager to learn new technologies and tackle challenging projects.</div>
         </section>
       </>
     );
