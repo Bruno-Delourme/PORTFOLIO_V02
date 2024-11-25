@@ -11,7 +11,7 @@ const About = () => {
 
         <div className='resume'>
           <img src="/miniCV.png" alt="Miniature du CV" className="cv-thumbnail" />
-          <a href="/CV.png" download="CV.png" className="cv">
+          <a href="/CV_25_11_24.jpg" download="CV_25_11_24.jpg" className="cv">
             Download my resume
           </a>
         </div>
