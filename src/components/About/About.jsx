@@ -10,9 +10,9 @@ const About = () => {
         <h1 className="title">about.</h1> 
 
         <div className='resume'>
-          <img src="/miniCV.png" alt="Miniature du CV" className="cv-thumbnail" />
           <a href="/CV_25_11_24.jpg" download="CV_25_11_24.jpg" className="cv">
-            Download my resume
+            <img src="/miniCV.png" alt="Miniature du CV" className="cv-thumbnail" />
+            <span>Download my resume</span>
           </a>
         </div>
         
